@@ -9,7 +9,7 @@ const Home = ({ products, bannerData }) => {
   return (
     <div className="pt-12" id="home">
         
-      <HeroBanner heroBanner={bannerData.length && bannerData[1]} />
+      <HeroBanner heroBanner={bannerData.length && bannerData[2]} />
 
       <div className="products-heading text-center mt-[40px] text-white">
           <h2 className="text-[40px] font-extrabold">Best Selling Products</h2>
@@ -20,7 +20,7 @@ const Home = ({ products, bannerData }) => {
         <Categories key={item} products={products} name={item} />
       ))}
 
-      <FooterBanner footerBanner={bannerData && bannerData[0]} />
+      <FooterBanner footerBanner={bannerData && bannerData[1]} />
 
     </div>
   )
