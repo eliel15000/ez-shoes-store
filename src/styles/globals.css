@@ -30,7 +30,7 @@ a {
 }
 
 .layout {
-  background-image: url('../images/bg_skechers.jpg');
+  background-image: url("../../public/bg_skechers.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;

@@ -1,12 +1,11 @@
 import Link from "next/link";
 
 import { Menu, Transition } from "@headlessui/react";
-import { GrCart, GrMenu, GrClose } from "react-icons/gr";
+import { GrMenu, GrClose } from "react-icons/gr";
 import { Fragment, useState } from "react";
 
 const Dropdown = ({ categories }) => {
 
-  const [buttonIcon, setButtonIcon] = useState(true);
   return (
     <div className="md:hidden">
       <Menu>
@@ -31,11 +30,11 @@ const Dropdown = ({ categories }) => {
                   <div key={item.name} className="px-1 py-1">
                     <Menu.Item>
                       {({ active }) => (
-                        <a href={item.href}>
+                        <Link href={item.href}>
                           <button className={`${active && 'bg-slate-300'} text-gray-600 w-full items-center rounded-md text-2xl`}>
                             {item.name}
                           </button>
-                        </a>
+                        </Link>
                       )}
                     </Menu.Item>
                   </div>
