@@ -1,27 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* @layer base {
+  html {
+    @apply scroll-smooth;
+  }
+} */
+
+html,
+body, * {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.layout {
+  background-image: url('../images/bg_skechers.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.product-slug {
+  background-image: linear-gradient(to top, #3b82f6 0%, #e0f2fe 100%);
+}
+
+.cart-wrapper {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.track {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 30s linear infinite;
+  width: 100%;
+}
+
+.track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from { transform: translateX(200%); }
+  to { transform: translateX(-200%); }
+}
+
+@keyframes marqueeSmall {
+  from { transform: translateX(300%); }
+  to { transform: translateX(-300%); }
+}
+
+@keyframes marqueeSmaller {
+  from { transform: translateX(500%); }
+  to { transform: translateX(-500%); }
+}
+
+@media screen and (max-width:800px) {
+  .track {
+    animation: marqueeSmall 25s linear infinite;
+    /* width: 550%; */
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@media screen and (max-width:450px) {
+  .track {
+    animation: marqueeSmaller 20s linear infinite;
+    /* width: 550%; */
+  }
 }
