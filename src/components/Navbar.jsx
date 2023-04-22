@@ -23,7 +23,7 @@ const categories = [
 
 const Navbar = () => {
 
-  const { showCart, setShowCart, totalQuantities } = useStateContext();
+  const { showCart, setShowCart, totalQuantities, setIsLogin } = useStateContext();
 
   return (
     <div className="navbar-container">
@@ -44,14 +44,16 @@ const Navbar = () => {
         {/* Center */}
         <div className="flex w-1/2 sm:w-1/3 justify-center">
           <Link href="/">
-            <p className="logo text-2xl md:text-3xl italic font-bold text-sky-600 font-ubuntu">EZ Shoe Store</p>
+            <p className="logo text-lg sm:text-2xl md:text-3xl italic font-bold text-sky-600 font-ubuntu">EZ Shoes Store</p>
           </Link>
         </div>
 
         {/* Right */}
         <div className="flex w-1/4 sm:w-1/3 justify-end">
 
-          <button type="button" style={iconsStyle} className="login-icon hover:scale-110"><AiOutlineUser /></button>
+          <button type="button" style={iconsStyle} className="login-icon hover:scale-110" onClick={() => setIsLogin(true)}>
+            <AiOutlineUser />
+          </button>
 
           <button type="button" style={iconsStyle} className="cart-icon hover:scale-110" onClick={() => setShowCart(true)}>
             <AiOutlineShopping />

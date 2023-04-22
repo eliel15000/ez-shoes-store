@@ -1,4 +1,4 @@
-import { FooterBanner, HeroBanner } from "@/components";
+import { FooterBanner, HeroBanner, Login } from "@/components";
 import Categories from "@/components/Categories";
 import { client } from "@/lib/client";
 
@@ -8,12 +8,14 @@ const Home = ({ products, bannerData }) => {
 
   return (
     <div className="pt-12" id="home">
+
+      <Login />
         
       <HeroBanner heroBanner={bannerData.length && bannerData[2]} />
 
       <div className="products-heading text-center mt-[40px] text-white">
-          <h2 className="text-[40px] font-extrabold">Best Selling Products</h2>
-          <p className="text-base font-medium">Shoes of many variations</p>
+        <h2 className="text-[40px] font-extrabold">Best Selling Products</h2>
+        <p className="text-base font-medium">Shoes of many variations</p>
       </div>
 
       {categ?.map((item) => (

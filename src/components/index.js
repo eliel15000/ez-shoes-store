@@ -7,3 +7,4 @@ export { default as Navbar } from "./Navbar";
 export { default as Product } from "./Product";
 export { default as Categories } from "./Categories";
 export { default as Dropdown } from "./Dropdown";
+export { default as Login } from "./Login";

@@ -1,8 +1,7 @@
+import { Fragment } from "react";
 import Link from "next/link";
-
-import { Menu, Transition } from "@headlessui/react";
 import { GrMenu, GrClose } from "react-icons/gr";
-import { Fragment, useState } from "react";
+import { Menu, Transition } from "@headlessui/react";
 
 const Dropdown = ({ categories }) => {
 
