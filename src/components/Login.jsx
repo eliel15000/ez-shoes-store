@@ -22,6 +22,7 @@ const Login = () => {
   const closeModal = () => {
     setIsLogin(false);
   }
+
   return (
     <>
       <Transition appear show={isLogin} as={Fragment}>
@@ -67,27 +68,32 @@ const Login = () => {
                       <label for="password" class={`${styleTW.label} my-2`}>Password</label>
                       <input type="text" id="password" class={styleTW.input} placeholder="Password" required />
 
-                      <p className="text-sm text-right text-gray-600 mt-1 mb-4"><span className="cursor-pointer">Forgot password?</span></p>
+                      <p className="text-sm text-right text-gray-600 mt-1 mb-4"><button type="button" className="cursor-pointer">Forgot password?</button></p>
+
+                      <button type="button" className="flex w-full mb-3 justify-center font-bold tracking-wide bg-gradient-to-r from-rose-200 to-sky-300 py-2 rounded-3xl">
+                        LOGIN
+                      </button>
+
                     </div>
 
                     <Divider>or</Divider>
 
                     {/* Social Connections */}
                     <div className="flex mt-4 gap-10 justify-center text-3xl">
-                      <div className={styleTW.icon}>
+                      <button type="button" className={styleTW.icon}>
                         <FcGoogle />
-                      </div>
-                      <div className={styleTW.icon}>
+                      </button>
+                      <button type="button" className={styleTW.icon}>
                         <BsFacebook className="text-blue-500" />
-                      </div>
-                      <div className={styleTW.icon}>
+                      </button>
+                      <button type="button" className={styleTW.icon}>
                         <BsApple />
-                      </div>
+                      </button>
                     </div>
 
                     {/* Register */}
                     <div className="mt-10 text-gray-600">
-                      <p className="text-center">Not a member? <span className="underline cursor-pointer">Sign up now</span></p>
+                      <p className="text-center">Not a member? <button type="button" className="underline cursor-pointer">Sign up now</button></p>
                     </div>
 
                   </div>
